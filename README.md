@@ -10,11 +10,14 @@
 - **Real-time Communication:** Facilitates real-time messaging between clients via the server.
 - **Concurrent Connections:** Manages multiple client connections using C-specific methods.
 
-# Technologies Used ⚙️:
+# Technologies and Concepts ⚙️:
 
-- Language: C
-- Compiler/Tools: GCC, Makefile, Git,file(.h), file(.c)
-- Libraries: Standard C libraries, POSIX API
+- **Language:** C
+- **Compiler/Tools:** GCC, Makefile, Git,file(.h), file(.c)
+- **Libraries:** Standard C libraries, minitalk.h
+- **Unix Signals:** Employs SIGUSR1 and SIGUSR2 for communication between client and server.
+- **Bitwise Operations:** Manages message encoding and decoding at the bit level.
+- **Signal Handling:**  Implements custom signal handlers for inter-process communication.
 
 # Key Functions and Concepts🔑:
 
@@ -34,5 +37,5 @@
 
 **`sig_config`:** Sets up signal handling for SIGUSR1 and SIGUSR2 to receive message bits.
 
-**** Uses signals to receive message bits and control the flow of data.
+**`Signal-driven Communication:`** Uses signals to receive message bits and control the flow of data.
 
