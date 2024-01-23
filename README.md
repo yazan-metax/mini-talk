@@ -14,7 +14,7 @@
 
 - **Language:** C
 - **Compiler/Tools:** GCC, Makefile, Git,file(.h), file(.c)
-- **Libraries:** Standard C libraries, minitalk.h
+- **Libraries:** Standard C libraries(`<signal.h>`), minitalk.h
 - **Unix Signals:** Employs SIGUSR1 and SIGUSR2 for communication between client and server.
 - **Bitwise Operations:** Manages message encoding and decoding at the bit level.
 - **Signal Handling:**  Implements custom signal handlers for inter-process communication.
@@ -39,3 +39,57 @@
 
 **`Signal-driven Communication:`** Uses signals to receive message bits and control the flow of data.
 
+
+# Getting Started👍🏻
+
+## Installation⬇
+
+```
+git clone https://github.com/yazan-metax/mini-talk.git
+cd mini-talk
+make
+```
+# Usage 🚀
+
+```
+./server
+./client [server PID] [message]
+
+```
+# How It Works
+
+## Server Setup
+- this server does not use traditional socket programming. Instead, it uses Unix signal handling to receive and reconstruct messages sent from the client. The server continuously runs in a loop, waiting for signals (`SIGUSR1` and `SIGUSR2`).
+
+## Client Communication
+
+- The client sends messages to the server using Unix signals. Each character of the message is encoded into bits and sent sequentially. The client uses the `kill` function to send signals representing the bits of each character.
+
+## Concurrency Handling
+
+- This implementation does not explicitly handle concurrency. The server handles one message at a time as it's based on Unix signal handling. For concurrency, one might consider using threads or handling multiple signal queues.
+
+# Skills Acquired
+
+## Network Programming in C
+
+- nstead of traditional network programming, this project explores inter-process communication using Unix signals, a fundamental concept in system-level programming in C.
+
+## IPC in C
+
+- Gained practical experience in using Unix signals for IPC, demonstrating how processes can communicate and synchronize their actions without shared memory.
+
+## Memory Management
+
+- The project involves careful management of variables and efficient use of resources, critical in C programming.
+
+## Debugging and Testing
+
+- Debugging skills are enhanced by working through the challenges of signal handling and process synchronization in C.
+
+
+# License 🚩
+
+This project is made available under the terms of this license:
+
+Permission is granted to anyone to use, modify, and distribute this software in any form, for any purpose, including commercial applications. The author provides this software "as-is" without warranty of any kind, either expressed or implied, including but not limited to the implied warranties of merchantability and fitness for a particular purpose. In no event shall the author be held liable for any damages arising from the use of the software.
