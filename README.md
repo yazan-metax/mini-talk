@@ -73,7 +73,7 @@ make
 
 ## Network Programming in C
 
-- nstead of traditional network programming, this project explores inter-process communication using Unix signals, a fundamental concept in system-level programming in C.
+- instead of traditional network programming, this project explores inter-process communication using Unix signals, a fundamental concept in system-level programming in C.
 
 ## IPC in C
 
